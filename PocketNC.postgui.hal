@@ -1,0 +1,14 @@
+# Include your customized HAL commands here
+# The commands in this file are run after the AXIS GUI (including PyVCP panel) starts
+
+#net remote-spindle_rpm motion.spindle-speed-out-abs => pyvcp.spindle_rpm
+net remote-current-X-position pyvcp.curXpos <= axis.0.joint-pos-cmd
+net remote-current-Y-position pyvcp.curYpos <= axis.1.joint-pos-cmd
+net remote-current-Z-position pyvcp.curZpos <= axis.2.joint-pos-cmd
+net remote-current-A-position pyvcp.curApos <= axis.3.joint-pos-cmd
+net remote-current-B-position pyvcp.curBpos <= axis.4.joint-pos-cmd
+net remote-Z-toolOffset pyvcp.ZtoolOffset <= motion.tooloffset.z
+net remote-mounting-position halui.mdi-command-00 <= pyvcp.mounting-position
+net remote-3-axis-stance halui.mdi-command-01 <= pyvcp.3-axis-stance
+net remote-tool-change halui.mdi-command-02 <= pyvcp.tool-change
+
